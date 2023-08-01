@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <style>
+
+        input[type=text], input[type=email],
+         input[type=password]
+        {
+        width: 200px;
+        padding: 2px;
+        background-color:pink;
+        font-family:Arial;
+        color:blue;
+        }
+        input[type=submit]
+        {
+        width: 100px;
+        padding: 2px;
+        background-color:darkgreen;
+        font-size:24px;
+        font-family:Cambria Math;
+        font-style:italic;
+        color:red;
+        }
+    </style>
+</head>
+<body style="background-color:aqua;background-image:url({% static 'images/about.jpg' %}"">
+<h3  style="font-family:stencil; color:indigo;"> USER REGISTRATION</h3>
+<h4>
+    <form action="register" method="post">
+        {% csrf_token %}
+        <input type="text" name="fname" placeholder="Enter your first name"><br><br>
+        <input type="text" name="lname" placeholder="Enter your last name"><br><br>
+        <input type="email" name="email" placeholder="Enter your email address"><br><br>
+         <input type="text" name="uname" placeholder="Enter your user name"><br><br>
+         <input type="password" name="pwd" placeholder="Enter your password"><br><br>
+         <input type="password" name="cpwd" placeholder="Confirm your password"><br><br>
+          <input type="submit">
+    </form>
+    {% for msg in messages %}
+    {{msg}} {% endfor %}
+
+</h4>
+</body>
+</html>

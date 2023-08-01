@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login page</title>
+     <style>
+
+        input[type=text],input[type=password]
+        {
+        width: 200px;
+        padding: 2px;
+        background-color:aqua;
+        font-family:Arial;
+        color:blue;
+        }
+        input[type=submit]
+        {
+        width: 100px;
+        padding: 2px;
+        background-color:darkgreen;
+        font-size:24px;
+        font-family:Cambria Math;
+        font-style:italic;
+        color:red;
+        }
+        </style>
+</head>
+<body style="background-image:url({% static 'images/about.jpg' %}">
+<h1 style="font-style:italic;font-family:Cambria Math;color:purple;">LOGIN Here.....</h1>
+<form action="login" method="post">
+    {% csrf_token %}
+    <br>
+    <input type="text" name="username" placeholder="Enter your user name"><br><br>
+    <input type="password" name="pwd" placeholder="Enter your password"><br><br>
+    <input type="submit">
+</form>
+
+</body>
+</html>
